@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    feeds.cpp
+    feeds.cpp \
+    fetch_source.cpp
 
 HEADERS  += mainwindow.h \
-    feeds.h
+    feeds.h \
+    fetch_source.h
 
 FORMS    += mainwindow.ui \
-    feeds.ui
+    feeds.ui \
+    fetch_source.ui

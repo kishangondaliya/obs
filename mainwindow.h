@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "fetch_source.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,12 +18,13 @@ public:
 
 private slots:
 
-    void start_git_clone();
-    void on_select_clicked();
+   // void start_git_clone();
+    void on_b_button_clicked();
 
     void on_toolButton_clicked();
 
 private:
+    Fetch_source *fetch_source;
     Ui::MainWindow *ui;
 };
 

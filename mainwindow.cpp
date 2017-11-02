@@ -6,6 +6,7 @@
 #include "qiodevice.h"
 #include "qdebug.h"
 #include "QTime"
+#include "fetch_source.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,8 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowTitle("OpenWrt Build System");
     ui->lineEdit->setText(" ");
     ui->label_2->hide();
-    ui->label_3->hide();
-    ui->textBrowser->hide();
 }
 
 MainWindow::~MainWindow()
@@ -33,7 +32,7 @@ void delay(int millisecondsToWait)
     }
 }
 
-void MainWindow::start_git_clone()
+/*void MainWindow::start_git_clone()
 {
     QProcess getSource;
     QStringList args;
@@ -45,27 +44,18 @@ void MainWindow::start_git_clone()
     while (!getSource.waitForFinished(100)) {
     }
     ui->textBrowser->append("Getting OpenWRT source done");
-}
+}*/
 
-void MainWindow::on_select_clicked()
+void MainWindow::on_b_button_clicked()
 {
-
-
     if (QDir(ui->lineEdit->text()).exists()) {
-        ui->lineEdit->hide();
-        ui->label->hide();
-        ui->toolButton->hide();
-        ui->select->hide();
-        ui->label_2->hide();
-        ui->textBrowser->show();
-        ui->label_3->show();
-        delay(500);
-        QDir::setCurrent(ui->lineEdit->text());
-        qDebug() << "click event done";
-        start_git_clone();
-
+            QDir::setCurrent(ui->lineEdit->text());
+            qDebug() << "click event done";
+            fetch_source = new Fetch_source(this);
+            fetch_source->show();
+            this->hide();
     } else {
-        ui->label_2->show();
+            ui->label_2->show();
     }
 }
 
