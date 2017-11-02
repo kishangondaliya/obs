@@ -15,6 +15,17 @@ public:
     explicit Feeds(QWidget *parent = 0);
     ~Feeds();
 
+private slots:
+
+    void on_packages_cb_stateChanged(int arg1);
+    void on_luci_cb_stateChanged(int arg1);
+    void on_routing_cb_stateChanged(int arg1);
+    void on_telephony_cb_stateChanged(int arg1);
+    void on_management_cb_stateChanged(int arg1);
+    void on_targets_cb_stateChanged(int arg1);
+    void on_custom_feeds_radio_toggled(bool checked);
+    void on_all_feeds_radio_toggled(bool checked);
+
 private:
     Ui::Feeds *ui;
 };
