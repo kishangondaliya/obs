@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "stdio.h"
 #include "qfiledialog.h"
-#include "qprocess.h"
 #include "qiodevice.h"
 #include "qdebug.h"
 #include "QTime"
@@ -13,8 +12,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("OpenWrt Build System");
-    ui->lineEdit->setText(" ");
     ui->label_2->hide();
 }
 
@@ -23,7 +20,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void delay(int millisecondsToWait)
+void MainWindow::delay(int millisecondsToWait)
 {
     QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
     while( QTime::currentTime() < dieTime )
@@ -32,25 +29,10 @@ void delay(int millisecondsToWait)
     }
 }
 
-/*void MainWindow::start_git_clone()
-{
-    QProcess getSource;
-    QStringList args;
-    ui->textBrowser->append("Started cloning OpenWRT project");
-    args<<"clone"<<"https://github.com/openwrt/openwrt.git";
-
-    getSource.start("git", args, QIODevice::ReadWrite);
-
-    while (!getSource.waitForFinished(100)) {
-    }
-    ui->textBrowser->append("Getting OpenWRT source done");
-}*/
-
 void MainWindow::on_b_button_clicked()
 {
     if (QDir(ui->lineEdit->text()).exists()) {
             QDir::setCurrent(ui->lineEdit->text());
-            qDebug() << "click event done";
             fetch_source = new Fetch_source(this);
             fetch_source->show();
             this->hide();

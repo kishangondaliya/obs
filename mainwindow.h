@@ -14,11 +14,11 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void delay(int millisecondsToWait);
     ~MainWindow();
 
 private slots:
 
-   // void start_git_clone();
     void on_b_button_clicked();
 
     void on_toolButton_clicked();
