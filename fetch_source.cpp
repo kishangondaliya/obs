@@ -29,16 +29,24 @@ void Fetch_source::on_start_button_clicked()
     args<<"clone"<<"https://github.com/openwrt/openwrt.git";
     getSource.start("git", args, QIODevice::ReadWrite);
 
-    while (!getSource.waitForFinished(100)) {
-        ui->wait_label->setText("Downloading source, please wait.");
-        MainWindow().delay(100);
-        ui->wait_label->setText("Downloading source, please wait..");
-        MainWindow().delay(100);
-        ui->wait_label->setText("Downloading source, please wait...");
-        MainWindow().delay(100);
+    if (getSource.pid()) {
+        do {
+                ui->wait_label->setText("Downloading source, please wait.");
+                MainWindow().delay(100);
+                ui->wait_label->setText("Downloading source, please wait..");
+                MainWindow().delay(100);
+                ui->wait_label->setText("Downloading source, please wait...");
+                MainWindow().delay(100);
+            } while (getSource.pid());
     }
-    ui->wait_label->hide();
-    ui->next_button->show();
+    else ui->wait_label->setText("Downloading Failed : Not able to start process");
+
+    if (getSource.exitCode())
+        ui->wait_label->setText("Downloading Failed : " + getSource.errorString());
+    else {
+        ui->wait_label->setText("Downloading Successful");
+        ui->next_button->show();
+    }
 }
 
 void Fetch_source::on_next_button_clicked()
