@@ -41,8 +41,10 @@ void Fetch_source::on_start_button_clicked()
     }
     else ui->wait_label->setText("Downloading Failed : Not able to start process");
 
-    if (getSource.exitCode())
-        ui->wait_label->setText("Downloading Failed : " + getSource.errorString());
+    if (getSource.exitCode()) {
+        ui->wait_label->setText("Downloading Failed : " + getSource.readAllStandardError());
+        ui->wait_label->setWordWrap(true);
+    }
     else {
         ui->wait_label->setText("Downloading Successful");
         ui->next_button->show();
