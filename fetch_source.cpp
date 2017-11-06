@@ -3,6 +3,7 @@
 #include "qprocess.h"
 #include "feeds.h"
 #include "mainwindow.h"
+#include "qfiledialog.h"
 
 Fetch_source::Fetch_source(QWidget *parent) :
     QMainWindow(parent),
@@ -20,7 +21,7 @@ Fetch_source::~Fetch_source()
 
 void Fetch_source::on_start_button_clicked()
 {
-    QProcess getSource, goToFolder;
+    QProcess getSource;
     QStringList args;
 
     /* TODO: Add calculating internet speed through speedtest or ping */
@@ -53,8 +54,7 @@ void Fetch_source::on_start_button_clicked()
     }
     else {
         ui->wait_label->setText("Downloading Successful");
-        goToFolder.start("cd openwrt", QIODevice::ReadWrite);
-        goToFolder.waitForFinished(-1);
+        QDir::setCurrent(QDir::currentPath() + "/openwrt");
         ui->next_button->show();
     }
 }
