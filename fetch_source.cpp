@@ -23,8 +23,13 @@ void Fetch_source::on_start_button_clicked()
     QProcess getSource;
     QStringList args;
 
+    /* TODO: Add calculating internet speed through speedtest or ping */
+
     ui->start_button->hide();
     ui->wait_label->show();
+
+    /*TODO: Give option to choose OpenWRT version(can add LEDE as well)*/
+    /*TODO: Give option to clone to custom folder */
 
     args<<"clone"<<"https://github.com/openwrt/openwrt.git";
     getSource.start("git", args, QIODevice::ReadWrite);
@@ -44,11 +49,13 @@ void Fetch_source::on_start_button_clicked()
     if (getSource.exitCode()) {
         ui->wait_label->setText("Downloading Failed : " + getSource.readAllStandardError());
         ui->wait_label->setWordWrap(true);
+        /* TODO: What to do after error? Delete folder, no internet etc. */
     }
     else {
         ui->wait_label->setText("Downloading Successful");
         ui->next_button->show();
     }
+    /* Go into folder after clone */
 }
 
 void Fetch_source::on_next_button_clicked()

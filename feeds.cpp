@@ -50,10 +50,6 @@ void Feeds::on_targets_cb_stateChanged(int arg1)
         ui->custom_feeds_radio->setChecked(true);
 }
 
-void Feeds::on_custom_feeds_radio_toggled(bool checked)
-{
-}
-
 void Feeds::on_all_feeds_radio_toggled(bool checked)
 {
     if (checked == true) {

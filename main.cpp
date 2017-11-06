@@ -7,5 +7,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    /* TODO: Add force close clean-up */
     return a.exec();
 }
