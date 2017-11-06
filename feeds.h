@@ -24,6 +24,7 @@ private slots:
     void on_management_cb_stateChanged(int arg1);
     void on_targets_cb_stateChanged(int arg1);
     void on_all_feeds_radio_toggled(bool checked);
+    void on_update_Feeds_Button_clicked();
 
 private:
     Ui::Feeds *ui;
