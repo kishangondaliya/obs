@@ -20,7 +20,7 @@ Fetch_source::~Fetch_source()
 
 void Fetch_source::on_start_button_clicked()
 {
-    QProcess getSource;
+    QProcess getSource, goToFolder;
     QStringList args;
 
     /* TODO: Add calculating internet speed through speedtest or ping */
@@ -55,7 +55,9 @@ void Fetch_source::on_start_button_clicked()
         ui->wait_label->setText("Downloading Successful");
         ui->next_button->show();
     }
-    /* Go into folder after clone */
+
+    goToFolder.start("cd openwrt", QIODevice::ReadWrite);
+    goToFolder.waitForFinished(-1);
 }
 
 void Fetch_source::on_next_button_clicked()
