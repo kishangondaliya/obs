@@ -53,11 +53,10 @@ void Fetch_source::on_start_button_clicked()
     }
     else {
         ui->wait_label->setText("Downloading Successful");
+        goToFolder.start("cd openwrt", QIODevice::ReadWrite);
+        goToFolder.waitForFinished(-1);
         ui->next_button->show();
     }
-
-    goToFolder.start("cd openwrt", QIODevice::ReadWrite);
-    goToFolder.waitForFinished(-1);
 }
 
 void Fetch_source::on_next_button_clicked()
