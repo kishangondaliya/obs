@@ -74,18 +74,21 @@ void Feeds::on_update_Feeds_Button_clicked()
 
     argsUp<<"update";
 
-    if (ui->packages_cb->isChecked()) argsUp<<"packages";
-    if (ui->luci_cb->isChecked()) argsUp<<"luci";
-    if (ui->management_cb->isChecked()) argsUp<<"management";
-    if (ui->routing_cb->isChecked()) argsUp<<"routing";
-    if (ui->targets_cb->isChecked()) argsUp<<"targets";
-    if (ui->telephony_cb->isChecked()) argsUp<<"telephony";
+    if (ui->all_feeds_radio->isChecked())
+        argsUp<<"-a";
+    else {
+        if (ui->packages_cb->isChecked()) argsUp<<"packages";
+        if (ui->luci_cb->isChecked()) argsUp<<"luci";
+        if (ui->management_cb->isChecked()) argsUp<<"management";
+        if (ui->routing_cb->isChecked()) argsUp<<"routing";
+        if (ui->targets_cb->isChecked()) argsUp<<"targets";
+        if (ui->telephony_cb->isChecked()) argsUp<<"telephony";
+    }
 
     getSourceUp.start("./scripts/feeds", argsUp, QIODevice::ReadWrite);
 
-    if (getSourceUp.pid())
-        do { MainWindow().delay(3000);
-           } while (getSourceUp.pid());
+    while (getSourceUp.pid())
+        MainWindow().delay(3000);
 
     if (getSourceUp.exitCode())
         qDebug() << "Error : " << getSourceUp.readAllStandardError();
