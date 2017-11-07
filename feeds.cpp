@@ -113,4 +113,40 @@ void Feeds::on_update_Feeds_Button_clicked()
 
 void Feeds::on_install_Feeds_Button_clicked()
 {
+    QProcess getSourceUp;
+    QStringList argsUp;
+
+    argsUp<<"install";
+
+    if (ui->all_feeds_radio->isChecked())
+        argsUp<<"-a";
+    else {
+        if (ui->packages_cb->isChecked()) argsUp<<"packages";
+        if (ui->luci_cb->isChecked()) argsUp<<"luci";
+        if (ui->management_cb->isChecked()) argsUp<<"management";
+        if (ui->routing_cb->isChecked()) argsUp<<"routing";
+        if (ui->targets_cb->isChecked()) argsUp<<"targets";
+        if (ui->telephony_cb->isChecked()) argsUp<<"telephony";
+    }
+
+    getSourceUp.start("./scripts/feeds", argsUp, QIODevice::ReadWrite);
+
+    ui->label_2->show();
+
+    ui->install_Feeds_Button->setDisabled(true);
+
+    while (getSourceUp.pid()) {
+        ui->label_2->setText("Installing.");
+        MainWindow().delay(1000);
+        ui->label_2->setText("Installing..");
+        MainWindow().delay(1000);
+        ui->label_2->setText("Installing...");
+        MainWindow().delay(1000);
+    }
+
+    /* TODO : Add handling on install failure */
+    if (getSourceUp.exitCode())
+        ui->label_2->setText("Error : " + getSourceUp.readAllStandardError());
+    else
+        ui->label_2->setText("Installed!!");
 }
