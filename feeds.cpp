@@ -11,7 +11,9 @@ Feeds::Feeds(QWidget *parent) :
     ui(new Ui::Feeds)
 {
     ui->setupUi(this);
-    ui->install_Feeds_Button->hide();
+    ui->install_Feeds_Button->setDisabled(true);
+    ui->label->hide();
+    ui->label_2->hide();
 }
 
 Feeds::~Feeds()
@@ -87,12 +89,28 @@ void Feeds::on_update_Feeds_Button_clicked()
 
     getSourceUp.start("./scripts/feeds", argsUp, QIODevice::ReadWrite);
 
-    while (getSourceUp.pid())
-        MainWindow().delay(3000);
+    ui->label->show();
 
+    ui->update_Feeds_Button->setDisabled(true);
+
+    while (getSourceUp.pid()) {
+        ui->label->setText("Updating.");
+        MainWindow().delay(1000);
+        ui->label->setText("Updating..");
+        MainWindow().delay(1000);
+        ui->label->setText("Updating...");
+        MainWindow().delay(1000);
+    }
+
+    /* TODO : Add handling on update failure */
     if (getSourceUp.exitCode())
-        qDebug() << "Error : " << getSourceUp.readAllStandardError();
-    else
-        qDebug() << "Successfully ";
+        ui->label->setText("Error : " + getSourceUp.readAllStandardError());
+    else {
+        ui->label->setText("Updated!!");
+        ui->install_Feeds_Button->setEnabled(true);
+    }
+}
 
+void Feeds::on_install_Feeds_Button_clicked()
+{
 }

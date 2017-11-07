@@ -26,7 +26,7 @@ void Fetch_source::on_start_button_clicked()
 
     /* TODO: Add calculating internet speed through speedtest or ping */
 
-    ui->start_button->hide();
+    ui->start_button->setDisabled(true);
     ui->wait_label->show();
 
     /*TODO: Give option to choose OpenWRT version(can add LEDE as well)*/
