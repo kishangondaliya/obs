@@ -5,6 +5,7 @@
 #include "qiodevice.h"
 #include "qfiledialog.h"
 #include "mainwindow.h"
+#include "selectconfig.h"
 
 Feeds::Feeds(QWidget *parent) :
     QMainWindow(parent),
@@ -156,5 +157,7 @@ void Feeds::on_install_Feeds_Button_clicked()
 
 void Feeds::on_next_b_clicked()
 {
-    /* Go to next window */
+    selectConf = new SelectConfig(this);
+    selectConf->show();
+    this->hide();
 }
