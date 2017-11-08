@@ -12,6 +12,7 @@ Feeds::Feeds(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->install_Feeds_Button->setDisabled(true);
+    ui->next_b->setDisabled(true);
     ui->label->hide();
     ui->label_2->hide();
 }
@@ -147,6 +148,13 @@ void Feeds::on_install_Feeds_Button_clicked()
     /* TODO : Add handling on install failure */
     if (getSourceUp.exitCode())
         ui->label_2->setText("Error : " + getSourceUp.readAllStandardError());
-    else
+    else {
         ui->label_2->setText("Installed!!");
+        ui->next_b->setEnabled(true);
+    }
+}
+
+void Feeds::on_next_b_clicked()
+{
+    /* Go to next window */
 }

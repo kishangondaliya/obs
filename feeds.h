@@ -27,6 +27,8 @@ private slots:
     void on_update_Feeds_Button_clicked();
     void on_install_Feeds_Button_clicked();
 
+    void on_next_b_clicked();
+
 private:
     Ui::Feeds *ui;
 };

@@ -221,6 +221,19 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="next_b">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>350</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
