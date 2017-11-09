@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "fetch_source.h"
+#include "fetchsource.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,7 +24,7 @@ private slots:
     void on_toolButton_clicked();
 
 private:
-    Fetch_source *fetch_source;
+    FetchSource *fetchSource;
     Ui::MainWindow *ui;
 };
 

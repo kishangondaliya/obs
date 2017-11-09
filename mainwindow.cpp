@@ -5,7 +5,7 @@
 #include "qiodevice.h"
 #include "qdebug.h"
 #include "QTime"
-#include "fetch_source.h"
+#include "fetchsource.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -34,8 +34,8 @@ void MainWindow::on_b_button_clicked()
 {
     if (QDir(ui->lineEdit->text()).exists()) {
             QDir::setCurrent(ui->lineEdit->text());
-            fetch_source = new Fetch_source(this);
-            fetch_source->show();
+            fetchSource = new FetchSource(this);
+            fetchSource->show();
             this->hide();
     } else {
             ui->label_2->show();

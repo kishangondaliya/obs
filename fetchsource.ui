@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Fetch_source</class>
- <widget class="QMainWindow" name="Fetch_source">
+ <class>FetchSource</class>
+ <widget class="QMainWindow" name="FetchSource">
   <property name="geometry">
    <rect>
     <x>0</x>

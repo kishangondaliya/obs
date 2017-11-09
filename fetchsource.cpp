@@ -1,25 +1,25 @@
-#include "fetch_source.h"
-#include "ui_fetch_source.h"
+#include "fetchsource.h"
+#include "ui_fetchsource.h"
 #include "qprocess.h"
 #include "feeds.h"
 #include "mainwindow.h"
 #include "qfiledialog.h"
 
-Fetch_source::Fetch_source(QWidget *parent) :
+FetchSource::FetchSource(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Fetch_source)
+    ui(new Ui::FetchSource)
 {
     ui->setupUi(this);
     ui->wait_label->hide();
     ui->next_button->hide();
 }
 
-Fetch_source::~Fetch_source()
+FetchSource::~FetchSource()
 {
     delete ui;
 }
 
-void Fetch_source::on_start_button_clicked()
+void FetchSource::on_start_button_clicked()
 {
     QProcess getSource;
     QStringList args;
@@ -59,7 +59,7 @@ void Fetch_source::on_start_button_clicked()
     }
 }
 
-void Fetch_source::on_next_button_clicked()
+void FetchSource::on_next_button_clicked()
 {
     feeds = new Feeds(this);
     feeds->show();

@@ -15,15 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     feeds.cpp \
-    fetch_source.cpp \
-    selectconfig.cpp
+    selectconfig.cpp \
+    fetchsource.cpp
 
 HEADERS  += mainwindow.h \
     feeds.h \
-    fetch_source.h \
-    selectconfig.h
+    selectconfig.h \
+    fetchsource.h
 
 FORMS    += mainwindow.ui \
     feeds.ui \
-    fetch_source.ui \
-    selectconfig.ui
+    selectconfig.ui \
+    fetchsource.ui
