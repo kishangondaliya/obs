@@ -11,7 +11,7 @@ FetchSource::FetchSource(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->wait_label->hide();
-    ui->next_button->hide();
+    ui->next_button->setDisabled(true);
 }
 
 FetchSource::~FetchSource()
@@ -55,7 +55,7 @@ void FetchSource::on_start_button_clicked()
     else {
         ui->wait_label->setText("Downloading Successful");
         QDir::setCurrent(QDir::currentPath() + "/openwrt");
-        ui->next_button->show();
+        ui->next_button->setEnabled(true);
     }
 }
 
