@@ -23,39 +23,39 @@ Feeds::~Feeds()
     delete ui;
 }
 
-void Feeds::on_packages_cb_stateChanged(int arg1)
+void Feeds::on_packages_cb_stateChanged(int state)
 {
-    if(arg1 == 0)
+    if(state == 0)
         ui->custom_feeds_radio->setChecked(true);
 }
 
-void Feeds::on_luci_cb_stateChanged(int arg1)
+void Feeds::on_luci_cb_stateChanged(int state)
 {
-    if(arg1 == 0)
+    if(state == 0)
         ui->custom_feeds_radio->setChecked(true);
 }
 
-void Feeds::on_routing_cb_stateChanged(int arg1)
+void Feeds::on_routing_cb_stateChanged(int state)
 {
-    if(arg1 == 0)
+    if(state == 0)
         ui->custom_feeds_radio->setChecked(true);
 }
 
-void Feeds::on_telephony_cb_stateChanged(int arg1)
+void Feeds::on_telephony_cb_stateChanged(int state)
 {
-    if(arg1 == 0)
+    if(state == 0)
         ui->custom_feeds_radio->setChecked(true);
 }
 
-void Feeds::on_management_cb_stateChanged(int arg1)
+void Feeds::on_management_cb_stateChanged(int state)
 {
-    if(arg1 == 0)
+    if(state == 0)
         ui->custom_feeds_radio->setChecked(true);
 }
 
-void Feeds::on_targets_cb_stateChanged(int arg1)
+void Feeds::on_targets_cb_stateChanged(int state)
 {
-    if(arg1 == 0)
+    if(state == 0)
         ui->custom_feeds_radio->setChecked(true);
 }
 
@@ -76,17 +76,17 @@ void Feeds::on_update_Feeds_Button_clicked()
     QProcess getSourceUp;
     QStringList argsUp;
 
-    argsUp<<"update";
+    argsUp << "update";
 
     if (ui->all_feeds_radio->isChecked())
-        argsUp<<"-a";
+        argsUp << "-a";
     else {
-        if (ui->packages_cb->isChecked()) argsUp<<"packages";
-        if (ui->luci_cb->isChecked()) argsUp<<"luci";
-        if (ui->management_cb->isChecked()) argsUp<<"management";
-        if (ui->routing_cb->isChecked()) argsUp<<"routing";
-        if (ui->targets_cb->isChecked()) argsUp<<"targets";
-        if (ui->telephony_cb->isChecked()) argsUp<<"telephony";
+        if (ui->packages_cb->isChecked()) argsUp << "packages";
+        if (ui->luci_cb->isChecked()) argsUp << "luci";
+        if (ui->management_cb->isChecked()) argsUp << "management";
+        if (ui->routing_cb->isChecked()) argsUp << "routing";
+        if (ui->targets_cb->isChecked()) argsUp << "targets";
+        if (ui->telephony_cb->isChecked()) argsUp << "telephony";
     }
 
     getSourceUp.start("./scripts/feeds", argsUp, QIODevice::ReadWrite);
@@ -118,17 +118,17 @@ void Feeds::on_install_Feeds_Button_clicked()
     QProcess getSourceUp;
     QStringList argsUp;
 
-    argsUp<<"install";
+    argsUp << "install";
 
     if (ui->all_feeds_radio->isChecked())
-        argsUp<<"-a";
+        argsUp << "-a";
     else {
-        if (ui->packages_cb->isChecked()) argsUp<<"packages";
-        if (ui->luci_cb->isChecked()) argsUp<<"luci";
-        if (ui->management_cb->isChecked()) argsUp<<"management";
-        if (ui->routing_cb->isChecked()) argsUp<<"routing";
-        if (ui->targets_cb->isChecked()) argsUp<<"targets";
-        if (ui->telephony_cb->isChecked()) argsUp<<"telephony";
+        if (ui->packages_cb->isChecked()) argsUp << "packages";
+        if (ui->luci_cb->isChecked()) argsUp << "luci";
+        if (ui->management_cb->isChecked()) argsUp << "management";
+        if (ui->routing_cb->isChecked()) argsUp << "routing";
+        if (ui->targets_cb->isChecked()) argsUp << "targets";
+        if (ui->telephony_cb->isChecked()) argsUp << "telephony";
     }
 
     getSourceUp.start("./scripts/feeds", argsUp, QIODevice::ReadWrite);

@@ -32,7 +32,7 @@ void FetchSource::on_start_button_clicked()
     /*TODO: Give option to choose OpenWRT version(can add LEDE as well)*/
     /*TODO: Give option to clone to custom folder */
 
-    args<<"clone"<<"https://github.com/openwrt/openwrt.git";
+    args << "clone" << "https://github.com/openwrt/openwrt.git";
     getSource.start("git", args, QIODevice::ReadWrite);
 
     if (getSource.pid()) {
