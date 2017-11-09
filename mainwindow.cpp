@@ -45,7 +45,7 @@ void MainWindow::on_b_button_clicked()
 void MainWindow::on_toolButton_clicked()
 {
     QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-                                                 "/home",
+                                                 "/",
                                                  QFileDialog::ShowDirsOnly
                                                  | QFileDialog::DontResolveSymlinks);
 
