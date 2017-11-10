@@ -1,5 +1,6 @@
 #include "selectconfig.h"
 #include "ui_selectconfig.h"
+#include "qdebug.h"
 
 SelectConfig::SelectConfig(QWidget *parent) :
     QMainWindow(parent),
@@ -13,17 +14,13 @@ SelectConfig::~SelectConfig()
     delete ui;
 }
 
-void SelectConfig::on_default_config_radioButton_toggled(bool checked)
-{
-    /* Create default config */
-}
-
-void SelectConfig::on_custom_config_radioButton_toggled(bool checked)
-{
-    /* Create custom config */
-}
-
 void SelectConfig::on_next_b_clicked()
 {
-    /* Go to next window */
+    ui->next_b->setDisabled(true);
+
+    if (ui->default_config_radioButton->isChecked())
+        qDebug() << "Going with default configuration";
+    else
+        qDebug() << "Custom configuration";
+
 }
