@@ -171,7 +171,7 @@
      <string>Install Feeds</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="update_feeds_label">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -196,7 +196,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="install_feeds_label">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -232,6 +232,103 @@
     </property>
     <property name="text">
      <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="packages_status">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>102</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not updated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="luci_status">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>132</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not updated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="routing_status">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>162</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not updated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="telephony_status">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>192</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not updated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="management_status">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>222</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not updated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="target_status">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>251</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not updated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status_label">
+    <property name="geometry">
+     <rect>
+      <x>339</x>
+      <y>70</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Status</string>
     </property>
    </widget>
   </widget>

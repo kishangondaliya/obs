@@ -16,9 +16,6 @@ public:
     ~SelectConfig();
 
 private slots:
-    void on_default_config_radioButton_toggled(bool checked);
-
-    void on_custom_config_radioButton_toggled(bool checked);
 
     void on_next_b_clicked();
 
