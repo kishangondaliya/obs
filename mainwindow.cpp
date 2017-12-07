@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->label_2->hide();
     /* TODO: Add welcome screen/label */
+    /* TODO: Add welcome screen/label */
 }
 
 MainWindow::~MainWindow()
