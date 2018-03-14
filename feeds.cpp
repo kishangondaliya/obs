@@ -157,7 +157,7 @@ void Feeds::on_install_Feeds_Button_clicked()
 
 void Feeds::on_next_b_clicked()
 {
-    selectConf = new SelectConfig(this);
-    selectConf->show();
+    selectConfig = new SelectConfig(this);
+    selectConfig->show();
     this->hide();
 }

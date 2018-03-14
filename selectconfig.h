@@ -2,6 +2,7 @@
 #define SELECTCONFIG_H
 
 #include <QMainWindow>
+#include "build.h"
 
 namespace Ui {
 class SelectConfig;
@@ -18,8 +19,10 @@ public:
 private slots:
 
     void on_next_b_clicked();
+    void doDefConfig();
 
 private:
+    Build *build;
     Ui::SelectConfig *ui;
 };
 

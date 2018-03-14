@@ -32,7 +32,7 @@ private slots:
 
 private:
     Ui::Feeds *ui;
-    SelectConfig *selectConf;
+    SelectConfig *selectConfig;
 };
 
 #endif // FEEDS_H
