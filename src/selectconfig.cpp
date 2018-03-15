@@ -27,9 +27,9 @@ void SelectConfig::on_next_b_clicked()
     if (ui->default_config_radioButton->isChecked()) {
         doDefConfig();
         qDebug() << "Going with default configuration";
+        this->close();
         build = new Build(this);
         build->show();
-        this->destroy();
     } else {
         qDebug() << "Custom configuration";
     }

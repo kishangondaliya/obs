@@ -34,9 +34,9 @@ void MainWindow::on_b_button_clicked()
 {
     if (QDir(ui->lineEdit->text()).exists()) {
             QDir::setCurrent(ui->lineEdit->text());
+            this->close();
             fetchSource = new FetchSource(this);
             fetchSource->show();
-            this->destroy();
     } else {
             ui->label_2->show();
     }

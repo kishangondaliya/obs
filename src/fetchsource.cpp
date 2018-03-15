@@ -61,7 +61,7 @@ void FetchSource::on_start_button_clicked()
 
 void FetchSource::on_next_button_clicked()
 {
+    this->close();
     feeds = new Feeds(this);
     feeds->show();
-    this->destroy();
 }
