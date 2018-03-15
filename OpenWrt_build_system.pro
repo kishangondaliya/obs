@@ -16,14 +16,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     feeds.cpp \
     selectconfig.cpp \
-    fetchsource.cpp
+    fetchsource.cpp \
+    build.cpp
 
 HEADERS  += mainwindow.h \
     feeds.h \
     selectconfig.h \
-    fetchsource.h
+    fetchsource.h \
+    build.h
 
 FORMS    += mainwindow.ui \
     feeds.ui \
     selectconfig.ui \
-    fetchsource.ui
+    fetchsource.ui \
+    build.ui
