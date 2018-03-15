@@ -1,7 +1,7 @@
-#include "selectconfig.h"
+#include "include/selectconfig.h"
 #include "ui_selectconfig.h"
 #include "qdebug.h"
-#include "build.h"
+#include "include/build.h"
 
 SelectConfig::SelectConfig(QWidget *parent) :
     QMainWindow(parent),

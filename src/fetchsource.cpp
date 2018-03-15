@@ -1,8 +1,8 @@
-#include "fetchsource.h"
+#include "include/fetchsource.h"
 #include "ui_fetchsource.h"
 #include "qprocess.h"
-#include "feeds.h"
-#include "mainwindow.h"
+#include "include/feeds.h"
+#include "include/mainwindow.h"
 #include "qfiledialog.h"
 
 FetchSource::FetchSource(QWidget *parent) :

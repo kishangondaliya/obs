@@ -1,11 +1,11 @@
-#include "mainwindow.h"
+#include "include/mainwindow.h"
 #include "ui_mainwindow.h"
 #include "stdio.h"
 #include "qfiledialog.h"
 #include "qiodevice.h"
 #include "qdebug.h"
 #include "QTime"
-#include "fetchsource.h"
+#include "include/fetchsource.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),

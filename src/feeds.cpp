@@ -1,11 +1,11 @@
-#include "feeds.h"
+#include "include/feeds.h"
 #include "ui_feeds.h"
 #include "qdebug.h"
 #include "qprocess.h"
 #include "qiodevice.h"
 #include "qfiledialog.h"
-#include "mainwindow.h"
-#include "selectconfig.h"
+#include "include/mainwindow.h"
+#include "include/selectconfig.h"
 
 Feeds::Feeds(QWidget *parent) :
     QMainWindow(parent),
