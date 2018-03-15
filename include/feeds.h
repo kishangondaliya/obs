@@ -2,7 +2,7 @@
 #define FEEDS_H
 
 #include <QMainWindow>
-#include "selectconfig.h"
+#include "selectrouter.h"
 
 namespace Ui {
 class Feeds;
@@ -32,7 +32,7 @@ private slots:
 
 private:
     Ui::Feeds *ui;
-    SelectConfig *selectConfig;
+    SelectRouter *selectRouter;
 };
 
 #endif // FEEDS_H

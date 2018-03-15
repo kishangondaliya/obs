@@ -17,16 +17,19 @@ SOURCES += src/main.cpp\
     src/feeds.cpp \
     src/selectconfig.cpp \
     src/fetchsource.cpp \
-    src/build.cpp
+    src/build.cpp \
+    src/selectrouter.cpp
 
 HEADERS  += include/mainwindow.h \
     include/feeds.h \
     include/selectconfig.h \
     include/fetchsource.h \
-    include/build.h
+    include/build.h \
+    include/selectrouter.h
 
 FORMS    += ui/mainwindow.ui \
     ui/feeds.ui \
     ui/selectconfig.ui \
     ui/fetchsource.ui \
-    ui/build.ui
+    ui/build.ui \
+    ui/selectrouter.ui

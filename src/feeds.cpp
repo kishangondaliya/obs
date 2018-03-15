@@ -5,7 +5,7 @@
 #include "qiodevice.h"
 #include "qfiledialog.h"
 #include "include/mainwindow.h"
-#include "include/selectconfig.h"
+#include "include/selectrouter.h"
 
 Feeds::Feeds(QWidget *parent) :
     QMainWindow(parent),
@@ -158,6 +158,6 @@ void Feeds::on_install_Feeds_Button_clicked()
 void Feeds::on_next_b_clicked()
 {
     this->close();
-    selectConfig = new SelectConfig(this);
-    selectConfig->show();
+    selectRouter = new SelectRouter(this);
+    selectRouter->show();
 }
