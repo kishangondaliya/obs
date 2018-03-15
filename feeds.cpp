@@ -159,5 +159,5 @@ void Feeds::on_next_b_clicked()
 {
     selectConfig = new SelectConfig(this);
     selectConfig->show();
-    this->hide();
+    this->destroy();
 }

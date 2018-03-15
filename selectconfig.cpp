@@ -29,7 +29,7 @@ void SelectConfig::on_next_b_clicked()
         qDebug() << "Going with default configuration";
         build = new Build(this);
         build->show();
-        this->hide();
+        this->destroy();
     } else {
         qDebug() << "Custom configuration";
     }

@@ -36,7 +36,7 @@ void MainWindow::on_b_button_clicked()
             QDir::setCurrent(ui->lineEdit->text());
             fetchSource = new FetchSource(this);
             fetchSource->show();
-            this->hide();
+            this->destroy();
     } else {
             ui->label_2->show();
     }

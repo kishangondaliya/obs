@@ -63,5 +63,5 @@ void FetchSource::on_next_button_clicked()
 {
     feeds = new Feeds(this);
     feeds->show();
-    this->hide();
+    this->destroy();
 }
