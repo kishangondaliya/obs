@@ -20,6 +20,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_radioButton_novice_toggled(bool checked);
+
 private:
     SelectConfig *selectconfig;
     Ui::SelectRouter *ui;
